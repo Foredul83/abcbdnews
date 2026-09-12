@@ -1,0 +1,43 @@
+/* Update Navbar logo to use SVG */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 150px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo img {
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover img {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    min-width: auto;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+}
