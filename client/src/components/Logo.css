@@ -1,21 +1,24 @@
-/* Update Navbar logo to use SVG */
-.navbar-logo {
+/* Logo Styling */
+.navbar-logo-wrapper {
   display: flex;
   align-items: center;
   gap: 12px;
   min-width: 150px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.navbar-logo img {
+.logo-icon {
   height: 45px;
   width: auto;
   transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(30, 64, 175, 0.1));
 }
 
-.navbar-logo:hover img {
-  transform: scale(1.05);
+.navbar-logo-wrapper:hover .logo-icon {
+  transform: scale(1.08) rotate(2deg);
+  filter: drop-shadow(0 4px 8px rgba(30, 64, 175, 0.2));
 }
 
 .logo-text {
@@ -26,18 +29,45 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   white-space: nowrap;
+  letter-spacing: -0.5px;
 }
 
+.navbar-logo-wrapper:hover .logo-text {
+  opacity: 0.8;
+}
+
+/* Dark Mode */
+body.dark-mode .logo-icon {
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
+}
+
+body.dark-mode .navbar-logo-wrapper:hover .logo-icon {
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .navbar-logo {
+  .navbar-logo-wrapper {
     min-width: auto;
+    gap: 8px;
   }
 
-  .navbar-logo img {
+  .logo-icon {
     height: 40px;
   }
 
   .logo-text {
+    font-size: 1.1rem;
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo-wrapper {
+    gap: 6px;
+  }
+
+  .logo-icon {
+    height: 35px;
   }
 }
